@@ -1,4 +1,4 @@
-CREATE TABLE vaccine_type(VAERS_ID int PRIMARY KEY,
+CREATE TABLE vaccine_type(VAERS_ID int ,
 						 VAX_TYPE varchar(100),
 						 VAX_MANU varchar(100),
 						 VAX_DOSE_SERIES varchar(100),
@@ -6,12 +6,24 @@ CREATE TABLE vaccine_type(VAERS_ID int PRIMARY KEY,
 						 VAX_NAME varchar(100)
 );
 
-CREATE TABLE vaccine_symp(VAERS_ID int PRIMARY KEY,
-						 SYMPTOM1 varchar(100),
-						 SYMPTOM2 varchar(100),
-						 SYMPTOM3 varchar(100),
-						 SYMPTOM4 varchar(100),
-						 SYMPTOM5 varchar(100)
+CREATE TABLE all_symp(VAERS_ID int ,
+						 symptoms varchar(100)
 );
-SELECT * FROM vaccine_symp
+
+CREATE TABLE vaccine_data(vaers_id int ,
+						  recvdate varchar(20), 
+						  age_yrs int, 
+						  sex varchar(20), 
+						  died varchar(20), 
+						  datedied varchar(20),
+						  l_threat varchar(20), 
+						  hospital varchar(20), 
+						  hospdays int, 
+						  recovd varchar(20), 
+						  vax_date varchar(20), 
+						  history varchar(10000)
+);
+
+SELECT * FROM vaccine_data
+SELECT * FROM all_symp
 SELECT * FROM vaccine_type
