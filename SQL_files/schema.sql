@@ -1,3 +1,4 @@
+DROP TABLE all_symp
 CREATE TABLE vaccine_type(VAERS_ID int ,
 						 VAX_TYPE varchar(100),
 						 VAX_MANU varchar(100),
