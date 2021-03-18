@@ -49,3 +49,11 @@ INNER JOIN all_symp s
 ON d.vaers_id = s.vaers_id
 WHERE  d.died = 'Y'
 GROUP BY d.sex
+
+--Selects the number of deaths by symptom in descsending order
+SELECT s.symptoms, COUNT(d.died) as number_of_deaths FROM vaccine_data d
+INNER JOIN all_symp s
+ON d.vaers_id = s.vaers_id
+WHERE  d.died = 'Y'
+GROUP BY s.symptoms
+ORDER BY number_of_deaths DESC
